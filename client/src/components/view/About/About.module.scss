@@ -1,0 +1,175 @@
+@import '../../../styles/global.scss';
+
+.root {
+  height: 70%;
+  width: 100%;
+  
+  .kodilla {
+    color: $color-green;
+  }
+  
+  .kodilla:hover {
+    opacity: 0.8;
+  }
+
+  .op:hover {
+    opacity: 0.8;
+  }
+
+  h1 {
+    position: relative;
+    text-align: center;
+    font-size: 46px;
+    padding-bottom: 25px;
+  }
+
+  h1::after {
+    content: '';
+    position: absolute;
+    top: 65%;
+    left: 46%;
+    width: 60px;
+    height: 3px;
+    background-color: $color-redOrange;
+  }
+
+  p:first-child {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: $font-header;
+  }
+
+  &_aboutContent {
+    height: 80vh;
+    overflow: auto;
+    position: relative;
+
+    &_intro {
+      padding: 50px 0;
+      border-bottom: 1px solid $color-light;
+    }
+    
+    &_projects {
+      position: relative;
+      padding: 50px 0;
+      border-bottom: 1px solid $color-light;
+
+
+      &_img {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+
+        &_single {
+          width: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 25px 25px 0 25px;
+          flex-direction: column;
+          text-align: center;
+
+          h2 {
+            padding-top: 5px;
+          }
+
+          i {
+            font-size: 26px;
+            padding: 4px;
+          }
+
+          img {
+            object-fit: cover;
+            width: 200px;
+            height: 300px;
+            border: 2px solid $color-lightBlue;
+          }
+
+          img:hover {
+            border: 2px solid $color-darkBlue;
+            opacity: 0.8;
+            box-shadow: 0px 0px 15px 5px $color-lightest;
+          }
+
+          &_icons {
+            padding: 5px;
+            color: $color-green;
+          }
+        }
+      }
+    }
+
+    &_technologies {
+      padding: 50px 0;
+      border-bottom: 1px solid $color-light;
+    }
+
+    &_footer {
+      padding: 50px 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 784px) {
+  .root {
+    font-size: 0.8em;
+    h1::after {
+      content: '';
+      position: absolute;
+      top: 65%;
+      left: 41%;
+      width: 60px;
+      height: 3px;
+      background-color: $color-redOrange;
+    }
+
+    height: 100%;
+    &_aboutContent {
+      height: 65vh;
+
+      &_projects {
+        position: relative;
+  
+        &_img {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          align-items: center;
+  
+          &_single {
+            width: 100%;
+  
+            i {
+              font-size: 26px;
+            }
+  
+            img {
+              object-fit: cover;
+              width: 200px;
+              height: 300px;
+              border: 2px solid $color-lightBlue;
+            }
+  
+            img:hover {
+              border: 2px solid $color-darkBlue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.top {
+  width: 100%;
+  text-align: center;
+  a {
+    text-align: center;
+  }
+
+  a:hover {
+    color: $color-green;
+  }
+}

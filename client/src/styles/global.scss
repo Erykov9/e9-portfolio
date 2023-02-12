@@ -1,0 +1,67 @@
+@import './settings.scss';
+
+* {
+  font-family: $font-main;
+  margin: 0;
+ 
+
+  p {
+    font-size: 1.2em;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  span {
+    color: $color-sunsetOrange
+    
+    ;
+    font-family: $font-header;
+  }
+
+  h1, h2, h3{
+    font-family: $font-header;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box; 
+}
+
+
+// SCROLLBAR //
+
+  /* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $color-lightDark;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color-lightDark;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $color-lightest;
+}
+
+@media only screen and (max-width: 784px)  {
+  ::-webkit-scrollbar {
+    width: 0
+  }
+}
+
+// .row::before,
+// .row::after {
+//   clear: both;
+//   content: "";
+//   display: table; 
+// }

@@ -1,0 +1,23 @@
+@import '../../../styles/global.scss';
+
+.root {
+  height: 100vh;
+
+  &_inside {
+    color: $color-lightest;
+    border: 3px solid $color-dark;
+    background-color: $color-lightDark;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .root {
+    padding: 0;
+    height: 100vh;
+
+    &_inside {
+      padding: 0 1vh;
+    }
+  }
+}

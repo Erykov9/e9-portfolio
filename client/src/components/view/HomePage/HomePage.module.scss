@@ -1,0 +1,85 @@
+@import '../../../styles/global.scss';
+
+.root { 
+  &_banner {
+    z-index: 1;
+    position: relative;
+
+    img {
+      width: 350px;
+      animation-name: breathe;
+      animation-duration: 7s;
+      animation-iteration-count: infinite;
+      z-index: 1;
+    }
+  };
+
+  &_header {
+    z-index: 3;
+    margin: 0 auto;
+    position: relative;
+    width:  90%;
+
+    h2 {
+      text-align: left;
+      overflow: hidden; /* Ensures the content is not revealed until the animation */
+      border-right: .15em solid $color-lightDark; /* The typwriter cursor */
+      white-space: nowrap; /* Keeps the content on a single line */
+      margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+      animation: 
+        typing 3s steps(27, end),
+        blink-caret .75s step-end infinite;
+    }
+  }
+};
+
+@media only screen and (max-width: 784px) {
+  .root  {
+    width: 100%;
+
+    &_header {
+      h2 {
+        font-size: 1.03em;
+        text-align: left;
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: .15em solid $color-lightDark; /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        animation: 
+          typing 3s steps(27, end),
+          blink-caret .75s step-end infinite;
+      }
+    }
+
+    &_banner {
+      img {
+        width: 250px;;
+      }
+    }
+  }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: $color-dark; }
+}
+
+/* BREATHING LOGO */
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100%  {
+    transform: scale(1);
+  }
+}

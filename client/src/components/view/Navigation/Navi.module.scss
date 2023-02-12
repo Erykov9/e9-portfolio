@@ -1,0 +1,174 @@
+@import '../../../styles/global.scss';
+
+.root {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  animation-name: blurring;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+
+  strong {
+    color: $color-redOrange;
+    text-align: center;
+    font-size: 35px;
+  }
+
+  &_content {
+    max-height: 85%;
+    max-width: 65%;
+    display: flex;
+    align-items: center;
+  }
+
+  &_navi {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $color-dark;
+  }
+
+  &_naviItem {
+    transform: rotate(-90deg);
+    display: table;
+    padding: 25px 15px;
+    
+
+    a:hover {
+      animation-name: navihover;
+      animation-duration: 1.2s;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &_social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1;
+    font-size: 1.45em;
+    height: 100%;
+    background-color: $color-dark;
+    
+
+    a:hover {
+      position: relative;
+      animation-name: socialhover;
+      animation-duration: 1.2s;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+
+.active {
+  a {
+    border-bottom: 1px solid $color-sunsetOrange
+
+  }
+}
+
+@media only screen and (max-width: 784px) {
+  .root {
+    flex-direction: column;
+
+    &_content {
+      max-height: 90%;
+      max-width: 70%;
+      display: flex;
+      align-items: center;
+    }
+
+    &_navi {
+      height: inherit;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 10%;
+      width: 100%;
+    };
+
+    &_naviItem {
+      transform: none;
+    };
+
+    &_social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10%;
+      flex-direction: row;
+      width: 100%
+    }
+
+  }
+}
+
+/* NAVI HOVER */
+@keyframes navihover {
+  0% {
+    color: inherit;
+    border-bottom: 1px solid $color-redOrange;
+    filter: blur(1px);
+  }
+  50% {
+    color: $color-redOrange;
+    border-bottom: 1px solid $color-redOrange;
+    filter: blur(1px);
+  }
+  100% {
+    color: inherit;
+    border-bottom: 1px solid $color-redOrange;
+    filter: blur(1px);
+  }
+}
+
+/* SOCIAL HOVER*/
+@keyframes socialhover {
+  0% {
+    color: inherit;
+  }
+  50% {
+    color: $color-sunsetOrange;
+  }
+  100% {
+    color: inherit;
+  }
+}
+
+/* LOADING BLUR */
+@keyframes blurring {
+  0% {
+    filter: blur(10px)
+  }
+  10% {
+    filter: blur(8px)
+  }
+  20% {
+    filter: blur(6px)
+  }
+  40%{
+    filter: blur(3px)
+  }
+  100% {
+    filter: none;
+  }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: $color-dark; }
+}

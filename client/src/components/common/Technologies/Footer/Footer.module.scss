@@ -1,0 +1,21 @@
+@import '../../../../styles/settings.scss';
+.root {
+  display: flex;
+  flex-direction: column;
+  
+  h3 {
+    text-align: center;
+    padding-top: 15px;
+    font-size: .6em;
+  }
+
+  &_phone:hover {
+    cursor: pointer;
+    color: $color-green;
+  }
+
+  &_mail:hover {
+    cursor: pointer;
+    color: $color-green;
+  }
+}
